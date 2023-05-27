@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
