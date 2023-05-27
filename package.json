@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "qrcode": "^1.5.3",
-    "qrcode-generator": "^1.4.4"
+    "qrcode-generator": "^1.4.4",
+    "vue-qrcode-directive": "^1.2.0"
   }
 }

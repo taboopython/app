@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-qrcode-directive": "^1.2.0"
   },
   "devDependencies": {
     "@vue/cli": "^5.0.8",
