@@ -72,17 +72,18 @@ export default {
   }
 }
 
-/* モダンなスタイル */
+/* 修正済みスタイル */
 .container {
-  background-color: #f2f2f2;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #1f2937;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
+.container h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ffffff; /* テキストカラーを再度指定 */
 }
 
 ul {
@@ -91,21 +92,26 @@ ul {
 }
 
 li {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
 }
 
 h3 {
-  font-size: 18px;
-  color: #333;
+  font-size: 24px;
+  color: #1f2937;
   margin-bottom: 10px;
 }
 
 p {
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  color: #4b5563;
   margin: 0;
 }
 </style>
