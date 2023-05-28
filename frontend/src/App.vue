@@ -9,7 +9,7 @@
             <p class="card-text">{{ product.price }}円</p>
             <button class="btn btn-primary" @click="handleProductClick(product)">アフィリエイトリンク</button>
             <div v-if="selectedProduct && selectedProduct.id === product.id" class="mt-3">
-              <div v-qrcode="affiliateLink" class="qrcode"></div>
+  <div v-qrcode="productAffiliateLink" class="qrcode"></div>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
             <p class="card-text">{{ event.date }}</p>
             <button class="btn btn-primary" @click="handleEventClick(event)">アフィリエイトリンク</button>
             <div v-if="selectedEvent && selectedEvent.id === event.id" class="mt-3">
-              <div v-qrcode="affiliateLink" class="qrcode"></div>
+              <div v-qrcode="eventAffiliateLink" class="qrcode"></div>
             </div>
           </div>
         </div>
@@ -41,14 +41,15 @@ export default {
     'qrcode': VueQrcode
   },
   data() {
-  return {
-    products: [],
-    selectedProduct: null,
-    events: [],
-    selectedEvent: null,  // 追加
-    affiliateLink: '',
-  };
-},
+    return {
+      products: [],
+      selectedProduct: null,
+      productAffiliateLink: '',
+      events: [],
+      selectedEvent: null,
+      eventAffiliateLink: '',
+    };
+  },
   mounted() {
     this.fetchProducts();
     this.fetchEvents();
@@ -64,7 +65,7 @@ export default {
     },
     handleProductClick(product) {
       this.selectedProduct = product;
-      this.affiliateLink = 'https://affiliate-link.com/' + product.id;
+      this.productAffiliateLink = 'https://affiliate-link.com/' + product.id;
     },
     fetchEvents() {
       const dummyEvents = [
@@ -75,11 +76,12 @@ export default {
       this.events = dummyEvents;
     },
     handleEventClick(event) {
-    this.selectedEvent = event;
-    this.affiliateLink = 'https://affiliate-link.com/event/' + event.id;
-  },
+      this.selectedEvent = event;
+      this.eventAffiliateLink = 'https://affiliate-link.com/' + event.id;
+    },
   },
 };
+
 </script>
 
 <style>
