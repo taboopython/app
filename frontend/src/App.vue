@@ -1,16 +1,20 @@
 <template>
-  <div>
-    <h1>商品一覧</h1>
-    <ul>
-      <li v-for="product in products" :key="product.id">
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.price }}円</p>
-        <button @click="handleProductClick(product)">アフィリエイトリンク</button>
-        <div v-if="selectedProduct && selectedProduct.id === product.id">
-          <div v-qrcode="affiliateLink" class="qrcode"></div>
+  <div class="container">
+    <h1 class="my-4">商品一覧</h1>
+    <div class="row">
+      <div class="col-md-4" v-for="product in products" :key="product.id">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">{{ product.name }}</h3>
+            <p class="card-text">{{ product.price }}円</p>
+            <button class="btn btn-primary" @click="handleProductClick(product)">アフィリエイトリンク</button>
+            <div v-if="selectedProduct && selectedProduct.id === product.id" class="mt-3">
+              <div v-qrcode="affiliateLink" class="qrcode"></div>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,8 +37,6 @@ export default {
   },
   methods: {
     fetchProducts() {
-      // ここで実際のAPI呼び出しを行うコードを追加する
-      // レスポンスから商品データを取得し、this.productsに代入する
       const dummyProducts = [
         { id: 1, name: '商品1', price: 1000 },
         { id: 2, name: '商品2', price: 2000 },
@@ -43,9 +45,8 @@ export default {
       this.products = dummyProducts;
     },
     handleProductClick(product) {
-      // ここで選択した商品をアフィリエイトリンクと共に処理するコードを追加する
       this.selectedProduct = product;
-      this.affiliateLink = 'https://affiliate-link.com/' + product.id; // ここに実際のアフィリエイトリンクを生成するロジックを追加する
+      this.affiliateLink = 'https://affiliate-link.com/' + product.id;
     },
   },
 };

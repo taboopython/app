@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "vue": "^2.6.11",
     "vue-qrcode-directive": "^1.2.0"
   },
