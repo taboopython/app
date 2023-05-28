@@ -65,8 +65,8 @@
       },
       handleProductClick(product) {
         this.selectedProduct = product;
-        // Update the affiliate link to trigger Vue's reactivity system
         this.productAffiliateLink = 'https://affiliate-link.com/' + product.id;
+        console.log('Product affiliate link:', this.productAffiliateLink);
       },
       fetchEvents() {
         const dummyEvents = [
@@ -78,8 +78,8 @@
       },
       handleEventClick(event) {
         this.selectedEvent = event;
-        // Update the affiliate link to trigger Vue's reactivity system
         this.eventAffiliateLink = 'https://affiliate-link.com/' + event.id;
+        console.log('Event affiliate link:', this.eventAffiliateLink);
       },
     },
   };
