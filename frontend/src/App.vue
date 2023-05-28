@@ -21,7 +21,10 @@
         <div class="card mb-4">
           <div class="card-body">
             <h3 class="card-title">{{ event.name }}</h3>
-            <p class="card-text">{{ event.date }}</p>
+            <button class="btn btn-primary" @click="handleEventClick(event)">アフィリエイトリンク</button>
+            <div v-if="selectedEvent && selectedEvent.id === event.id" class="mt-3">
+              <div v-qrcode="affiliateLink" class="qrcode"></div>
+            </div>
           </div>
         </div>
       </div>
