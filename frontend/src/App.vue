@@ -86,8 +86,86 @@
 </script>
 
 <style>
+  body {
+    background-color: #f5f5f5;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  h1.my-4 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .col-md-4 {
+    width: 33.333333%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+    background-color: #fff;
+  }
+
+  .card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+
+  .btn.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+  }
+
+  .btn.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004c99;
+  }
+
   .qrcode {
     width: 200px;
     height: 200px;
+    margin: 0 auto;
+    display: block;
   }
 </style>
