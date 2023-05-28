@@ -15,6 +15,17 @@
         </div>
       </div>
     </div>
+    <h1 class="my-4">イベント一覧</h1>
+    <div class="row">
+      <div class="col-md-4" v-for="event in events" :key="event.id">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="card-title">{{ event.name }}</h3>
+            <p class="card-text">{{ event.date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,10 +41,12 @@ export default {
       products: [],
       selectedProduct: null,
       affiliateLink: '',
+      events: [],
     };
   },
   mounted() {
     this.fetchProducts();
+    this.fetchEvents();
   },
   methods: {
     fetchProducts() {
@@ -47,6 +60,14 @@ export default {
     handleProductClick(product) {
       this.selectedProduct = product;
       this.affiliateLink = 'https://affiliate-link.com/' + product.id;
+    },
+    fetchEvents() {
+      const dummyEvents = [
+        { id: 1, name: 'イベント1', date: '2023-06-01' },
+        { id: 2, name: 'イベント2', date: '2023-06-15' },
+        { id: 3, name: 'イベント3', date: '2023-07-01' },
+      ];
+      this.events = dummyEvents;
     },
   },
 };
