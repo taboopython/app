@@ -41,13 +41,14 @@ export default {
     'qrcode': VueQrcode
   },
   data() {
-    return {
-      products: [],
-      selectedProduct: null,
-      affiliateLink: '',
-      events: [],
-    };
-  },
+  return {
+    products: [],
+    selectedProduct: null,
+    events: [],
+    selectedEvent: null,  // 追加
+    affiliateLink: '',
+  };
+},
   mounted() {
     this.fetchProducts();
     this.fetchEvents();
@@ -73,6 +74,10 @@ export default {
       ];
       this.events = dummyEvents;
     },
+    handleEventClick(event) {
+    this.selectedEvent = event;
+    this.affiliateLink = 'https://affiliate-link.com/event/' + event.id;
+  },
   },
 };
 </script>
