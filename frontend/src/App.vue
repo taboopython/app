@@ -8,18 +8,8 @@
             <h3 class="card-title">{{ product.name }}</h3>
             <p class="card-text">{{ product.price }}円</p>
             <button class="btn btn-primary" @click="handleProductClick(product)">アフィリエイトリンク</button>
-            <template>
-  <div class="container">
-    <h1 class="my-4">商品一覧</h1>
-    <div class="row">
-      <div class="col-md-4" v-for="product in products" :key="product.id">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h3 class="card-title">{{ product.name }}</h3>
-            <p class="card-text">{{ product.price }}円</p>
-            <button class="btn btn-primary" @click="handleProductClick(product)">アフィリエイトリンク</button>
             <div v-if="selectedProduct && selectedProduct.id === product.id" class="mt-3">
-              <div v-qrcode="productAffiliateLink" class="qrcode"></div>
+              <img v-qrcode:options="{ text: productAffiliateLink }" class="qrcode">
             </div>
           </div>
         </div>
@@ -34,7 +24,7 @@
             <p class="card-text">{{ event.date }}</p>
             <button class="btn btn-primary" @click="handleEventClick(event)">アフィリエイトリンク</button>
             <div v-if="selectedEvent && selectedEvent.id === event.id" class="mt-3">
-              <div v-qrcode="eventAffiliateLink" class="qrcode"></div>
+              <img v-qrcode:options="{ text: eventAffiliateLink }" class="qrcode">
             </div>
           </div>
         </div>
